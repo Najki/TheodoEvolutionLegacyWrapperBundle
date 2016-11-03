@@ -10,24 +10,24 @@ use Theodo\Evolution\Bundle\LegacyWrapperBundle\Kernel\LegacyKernelInterface;
 
 /**
  * LegacyBooterListener autoloads the legacy.
- * 
+ *
  * @author Benjamin Grandfond <benjaming@theodo.fr>
  */
 class LegacyBooterListener implements EventSubscriberInterface
 {
     /**
-     * @var \Theodo\Evolution\Bundle\LegacyWrapperBundle\Kernel\LegacyKernelInterface
+     * @var LegacyKernelInterface
      */
     private $kernel;
 
     /**
-     * @var \Symfony\Component\DependencyInjection\ContainerInterface
+     * @var ContainerInterface
      */
     private $container;
 
     /**
      * @param LegacyKernelInterface $kernel
-     * @param ContainerInterface $container
+     * @param ContainerInterface    $container
      */
     public function __construct(LegacyKernelInterface $kernel, ContainerInterface $container)
     {
@@ -67,10 +67,9 @@ class LegacyBooterListener implements EventSubscriberInterface
      */
     public static function getSubscribedEvents()
     {
-        return array(
-            KernelEvents::REQUEST => array('onKernelRequest', '35')
-        );
+        return [
+            KernelEvents::REQUEST => ['onKernelRequest', '35'],
+        ];
     }
 
 }
- 

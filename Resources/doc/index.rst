@@ -8,7 +8,7 @@ in a simple way:
 * if it can't, it let the legacy project try to return a response
 * otherwise return a 404 response
 
-To do so, the LegacyWrapperBundle provides a ```RouterLister``` which will delegates the request
+To do so, the LegacyWrapperBundle provides a ```RouterLister``` which will delegate the request
 handling to the ```RouterListener``` of Symfony 2 and if a ```HttpNotFoundException``` is thrown
 it will call the legacy kernel, which is an implementation of the ``HttpKernelInterface`` of the
 legacy project.
